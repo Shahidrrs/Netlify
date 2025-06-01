@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShahidFlix - Download Movies</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #e50914;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .container {
+      padding: 20px;
+    }
+    .category, .movies, .back-button {
+      display: none;
+    }
+    .visible {
+      display: block;
+    }
+    .movie {
+      background-color: #222;
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .movie img {
+      width: 100px;
+      float: left;
+      margin-right: 15px;
+      border-radius: 6px;
+    }
+    .movie h3 {
+      margin: 0;
+    }
+    .movie p {
+      margin: 5px 0;
+    }
+    .movie a {
+      display: inline-block;
+      margin-top: 8px;
+      color: #1db954;
+      text-decoration: none;
+    }
+    .movie a:hover {
+      text-decoration: underline;
+    }
+    .search-bar {
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px 5px;
+      background-color: #e50914;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c40812;
+    }
+    .clearfix {
+      clear: both;
+    }
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8748929875918340"
+     crossorigin="anonymous"></script>
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ShahidFlix</h1>
+  <p>Download your favorite Bollywood, Hollywood, and Anime movies!</p>
+</header>
+
+<div class="container">
+  <div id="mainMenu" class="visible">
+    <button onclick="showCategory('hollywood')">Hollywood</button>
+    <button onclick="showCategory('bollywood')">Bollywood</button>
+    <button onclick="showCategory('animation')">Animation & Anime</button>
+  </div>
+
+  <div id="hollywood" class="movies">
+    <div class="search-bar">
+      <input type="text" placeholder="Search Hollywood..." onkeyup="searchMovies(this, 'hollywood')">
+    </div>
+    <div class="movie">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Oppenheimer_%282023%29.jpg" alt="Oppenheimer">
+      <h3>Oppenheimer (2023)</h3>
+      <p>IMDb Rating: 8.5/10</p>
+      <a href="https://archive.org/download/oppenheimer_2023/Oppenheimer.mp4" download>Download Now</a>
+      <div class="clearfix"></div>
+    </div>
+    <div class="movie">
+      <img src="https://upload.wikimedia.org/wikipedia/en/1/13/Avatar2Poster.jpg" alt="Avatar 2">
+      <h3>Avatar 2 (2022)</h3>
+      <p>IMDb Rating: 7.7/10</p>
+      <a href="https://archive.org/download/avatar-2-2022/Avatar2.mp4" download>Download Now</a>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+  <div id="bollywood" class="movies">
+    <div class="search-bar">
+      <input type="text" placeholder="Search Bollywood..." onkeyup="searchMovies(this, 'bollywood')">
+    </div>
+    <div class="movie">
+      <img src="https://upload.wikimedia.org/wikipedia/en/9/91/Jawan_film_poster.jpg" alt="Jawan">
+      <h3>Jawan (2023)</h3>
+      <p>IMDb Rating: 7.2/10</p>
+      <a href="https://archive.org/download/jawan-2023/Jawan.mp4" download>Download Now</a>
+      <div class="clearfix"></div>
+    </div>
+    <div class="movie">
+      <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Pathaan_film_poster.jpg" alt="Pathaan">
+      <h3>Pathaan (2023)</h3>
+      <p>IMDb Rating: 6.9/10</p>
+      <a href="https://archive.org/download/pathaan-2023/Pathaan.mp4" download>Download Now</a>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+  <div id="animation" class="movies">
+    <div class="search-bar">
+      <input type="text" placeholder="Search Animation & Anime..." onkeyup="searchMovies(this, 'animation')">
+    </div>
+    <div class="movie">
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Demon_Slayer_Mugen_Train_Poster.jpg" alt="Demon Slayer">
+      <h3>Demon Slayer: Mugen Train</h3>
+      <p>IMDb Rating: 8.2/10</p>
+      <a href="https://archive.org/download/demonslayer-mugen-train/DemonSlayer.mp4" download>Download Now</a>
+      <div class="clearfix"></div>
+    </div>
+    <div class="movie">
+      <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/SpideyAcrossTheSpiderVerse.jpg" alt="Spider-Man: Across the Spider-Verse">
+      <h3>Spider-Man: Across the Spider-Verse (2023)</h3>
+      <p>IMDb Rating: 8.7/10</p>
+      <a href="https://archive.org/download/spiderverse2023/SpiderVerse.mp4" download>Download Now</a>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+  <div class="back-button">
+    <button onclick="goBack()">Back</button>
+  </div>
+</div>
+
+<script>
+  function showCategory(categoryId) {
+    document.getElementById("mainMenu").classList.remove("visible");
+    document.getElementById(categoryId).classList.add("visible");
+    document.querySelector(".back-button").classList.add("visible");
+  }
+
+  function goBack() {
+    document.querySelectorAll(".movies").forEach(div => div.classList.remove("visible"));
+    document.querySelector(".back-button").classList.remove("visible");
+    document.getElementById("mainMenu").classList.add("visible");
+  }
+
+  function searchMovies(input, categoryId) {
+    const filter = input.value.toLowerCase();
+    const category = document.getElementById(categoryId);
+    const movies = category.querySelectorAll(".movie");
+    movies.forEach(movie => {
+      const title = movie.querySelector("h3").textContent.toLowerCase();
+      movie.style.display = title.includes(filter) ? "block" : "none";
+    });
+  }
+</script>
+
+</body>
+</html>
